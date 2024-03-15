@@ -14,11 +14,11 @@ const convex=new ConvexReactClient(convex_url);
 
 export const ConvexClerkProvider=({children,}:ConvexClientProviderProps)=>{
     return (
-        // <ClerkProvider>
-        //     <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-        //         {children}
-        //     </ConvexProviderWithClerk>
-        // </ClerkProvider>
-        <h1>Hello</h1>
+        <ClerkProvider>
+            <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+                {children}
+            </ConvexProviderWithClerk>
+        </ClerkProvider>
+
     )
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import Navbar from "@/app/(Home)/_components/Navbar";
+import {ConvexClerkProvider} from "@/providers/convex-client-provider";
 export default function Home() {
   return (
       <>

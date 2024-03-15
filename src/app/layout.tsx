@@ -18,12 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
+      <ConvexClerkProvider>
           <html lang="en">
           <body>
 
           {children}</body>
           </html>
+      </ConvexClerkProvider>
+
 
   );
 }
