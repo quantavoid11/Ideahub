@@ -1,3 +1,5 @@
+'use client'
+
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +22,7 @@ export default function AddButton(){
                 <Dialog>
                     <DialogTrigger asChild>
                         <div
-                            className="bg-blue-700 mx-3 h-[35px] rounded-sm  mt-2 flex justify-center items-center hover:bg-blue-600">
+                            className="bg-white/25 mx-3 h-[35px] rounded-sm  mt-2 flex justify-center opacity-70 items-center hover:opacity-100">
                             <TooltipTrigger asChild>
                             <button className="text-white ">
                                 <FontAwesomeIcon icon={faPlus} size={"lg"}/>

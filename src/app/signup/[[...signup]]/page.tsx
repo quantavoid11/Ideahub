@@ -14,7 +14,7 @@ export default function SignUpPge(){
             <div className=" h-screen bg-[#fcf9ee] flex justify-center items-center ">
                 <div className="flex justify-center items-center pt-[150px]">
                    {/*SignUp*/}
-                    <SignUp/>
+                    <SignUp />
                 </div>
 
 

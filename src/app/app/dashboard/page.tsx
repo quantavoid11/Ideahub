@@ -6,7 +6,7 @@ export default function dashboardPage(){
     return (
         <div className="h-screen flex  justify-between">
             <Sidebar/>
-            <UserButton/>
+            <UserButton afterSignOutUrl="/"/>
         </div>
     )
 }

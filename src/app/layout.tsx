@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {ConvexClerkProvider} from "@/providers/convex-client-provider";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +20,15 @@ export default function RootLayout({
 }>) {
   return (
 
+
+      <ConvexClerkProvider>
           <html lang="en">
           <body>
-          <ConvexClerkProvider>
-          {children}</ConvexClerkProvider>
+          {children}
           </body>
           </html>
+      </ConvexClerkProvider>
+
 
 
 
