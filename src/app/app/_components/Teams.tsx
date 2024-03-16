@@ -1,29 +1,30 @@
+"use client";
 
-import TeamButton from "@/app/app/_components/TeamButton";
-import {clerkClient, OrganizationList, useOrganization } from "@clerk/nextjs";
 import { useOrganizationList } from "@clerk/nextjs";
-import {useState} from "react";
+import TeamButton from "./TeamButton";
 
+// import { Item } from "./item";
 
-export default  async function Teams() {
-    
-    // const { userMemberships } = useOrganizationList({
-    //     userMemberships: {
-    //         infinite: true,
-    //       },
-    //   });
-      
-    // console.log(userMemberships)
-    const organizations = await clerkClient.organizations.
-getOrganizationList();
+export const Teams= ()=>  {
+  const { userMemberships } = useOrganizationList({
+    userMemberships: {
+      infinite: true,
+    },
+  });
 
-
-
-    return (
-        <ul className="flex flex-col gap-y-0.5 "> 
-            <li>
-                {organizations?.map(team => (<TeamButton imageUrl={team.imageUrl} name={team.name} key={team.id} id={team.id}/>))}
-            </li>     
-        </ul>
-    )
-}
+  console.log(userMemberships);
+  
+  
+  return (
+    <ul className="space-y-4">
+      {userMemberships.data?.map((mem) => (
+        <TeamButton
+          key={mem.organization.id}
+          id={mem.organization.id}
+          name={mem.organization.name}
+          imageUrl={mem.organization.imageUrl}
+        />
+      ))}
+    </ul>
+  );
+};

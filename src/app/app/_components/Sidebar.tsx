@@ -1,7 +1,7 @@
 
 
 import AddButton from "@/app/app/_components/AddButton";
-import Teams from "@/app/app/_components/Teams";
+import {Teams} from "@/app/app/_components/Teams";
 
 export default function Sidebar(){
     return (

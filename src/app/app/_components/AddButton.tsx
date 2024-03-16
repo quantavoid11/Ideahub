@@ -31,7 +31,7 @@ export default function AddButton(){
                         </div>
                     </DialogTrigger>
                     <DialogContent>
-                        <CreateOrganization/>
+                        <CreateOrganization skipInvitationScreen={true} afterCreateOrganizationUrl="/app/dashboard"/>
                     </DialogContent>
                 </Dialog>
 
