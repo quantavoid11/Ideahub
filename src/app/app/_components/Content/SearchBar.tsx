@@ -1,17 +1,41 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { UserButton } from "@clerk/nextjs";
 import { faBell, faCircleQuestion, faPlug, faPlus, faQuestion, faQuestionCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { useRouter } from "next/navigation";
+import { ChangeEvent, useEffect, useState } from "react";
+import {useDebounce} from "@uidotdev/usehooks"
+import qs from "query-string";
 
 export default function SearchBar(){
+    const router=useRouter();
+    const [value,setValue]=useState("");
+    const debouncedValue=useDebounce(value,500);
+
+    const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
+        setValue(e.target.value);
+    }
+
+    useEffect(()=>{
+        const url=qs.stringifyUrl({
+            url:"/app/dashboard",
+            query:{
+                search:debouncedValue,
+            }
+        },{skipEmptyString:true,skipNull:true});
+
+        router.push(url);
+    },[debouncedValue,router])
+    
     return (
         <div className="w-full flex gap-x-20">
             <div className="w-1/2">
                <div className="relative" >
                 <FontAwesomeIcon icon={faSearch} className="absolute top-1 left-4 text-black text-center mt-1.5 " size={"lg"} />
-                    <Input className="shadow-none border-gray-500 px-12 h-10" placeholder="Search boards"/>
+                    <Input className="shadow-none border-gray-500 px-12 h-10" placeholder="Search boards" value={value} onChange={handleChange}/>
                </div>
             </div>
             <div className="w-1/2 flex gap-x-8">
