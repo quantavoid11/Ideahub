@@ -6,17 +6,19 @@ import TeamButton from "./TeamButton";
 // import { Item } from "./item";
 
 export const Teams= ()=>  {
-  const { userMemberships } = useOrganizationList({
+  const { isLoaded,userMemberships } = useOrganizationList({
     userMemberships: {
       infinite: true,
     },
   });
 
-  console.log(userMemberships);
+  if(!isLoaded){
+    return null;
+  }
   
   
   return (
-    <ul className="space-y-4">
+    <ul className="mt-4 space-y-4">
       {userMemberships.data?.map((mem) => (
         <TeamButton
           key={mem.organization.id}

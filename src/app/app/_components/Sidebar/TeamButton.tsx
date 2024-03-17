@@ -10,21 +10,20 @@ interface TeamButtonProps {
     imageUrl:string 
 }
 export default function TeamButton(props:TeamButtonProps){
-//     const { organization } = useOrganization();
-//   const { setActive } = useOrganizationList();
-
-//   const onClick = () => {
-//     if (!setActive) return;
-
-//     setActive({ organization: props?.id });
-//   };
+    const { organization } = useOrganization();
+  const { setActive } = useOrganizationList();
+  
+  const onButtonClick = () => {
+    if (!setActive) return;
+    setActive({ organization: props?.id });    
+  };
     return (
         <TooltipProvider>
             <Tooltip>
                 <div  className=" mx-3 h-[35px]  mt-2 flex justify-center items-center opacity-80  hover:opacity-100 ">
                     <TooltipTrigger asChild>
-                        <button className="text-white " >
-                           <Image src={props.imageUrl} alt="team-logo " height={35} width={35} className="rounded-sm"/>
+                        <button className="text-white " onClick={onButtonClick} >
+                           <Image src={props.imageUrl} alt="team-logo " height={40} width={40} className="rounded-sm"/>
                         </button>
                     </TooltipTrigger>
                 </div>
