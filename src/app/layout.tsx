@@ -4,6 +4,7 @@ import "./globals.css";
 import {ConvexClerkProvider} from "@/providers/convex-client-provider";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { Toaster } from "sonner";
 config.autoAddCss = false
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,8 +23,10 @@ export default function RootLayout({
 
 
       <ConvexClerkProvider>
+        
           <html lang="en">
           <body>
+          <Toaster/>
           {children}
           </body>
           </html>

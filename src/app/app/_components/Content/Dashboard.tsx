@@ -1,3 +1,4 @@
+'use c;ient';
 import DeashboardHeader from "./DashboardHeader";
 import DeashboardTemplate from "./DashboardTemplate";
 

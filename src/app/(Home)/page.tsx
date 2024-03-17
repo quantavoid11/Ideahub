@@ -1,15 +1,26 @@
+'use client';
+
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import Navbar from "@/app/(Home)/_components/Navbar";
+import { useConvexAuth } from "convex/react";
+import { redirect } from "next/navigation";
+import Loading from "@/components/Auth/Loading";
 
 export default function Home() {
+    const { isLoading, isAuthenticated } = useConvexAuth();
+    if(isLoading){
+        return <Loading/>
+    }
+    if(isAuthenticated){
+        redirect("/app/dashboard");
+    }
   return (
       <>
         <Navbar/>
-
           <div className=" h-full bg-[#fcf9ee] ">
 
               <div className="flex  justify-center items-center flex-col pt-[154px] gap-y-2">
