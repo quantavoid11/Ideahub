@@ -1,12 +1,12 @@
 import { UserButton } from "@clerk/nextjs";
+import SearchBar from "./SearchBar";
 
 export default function Content(){
     return (
-        <div className="w-full bg-slate-700 flex flex-col ">
-            <div className="mt-4">
-                <div className="flex flex-col items-end mr-4">
-                <UserButton afterSignOutUrl="/"/>
-                </div>
+        <div className="w-full bg-white flex flex-col ">
+            <div className="mt-0">
+                <SearchBar/>
+                
             </div>
              
         </div>
