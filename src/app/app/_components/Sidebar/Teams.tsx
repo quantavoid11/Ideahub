@@ -18,7 +18,7 @@ export const Teams= ()=>  {
   
   
   return (
-    <ul className="mt-4 space-y-4">
+    <ul className="mt-4 space-y-3">
       {userMemberships.data?.map((mem) => (
         <TeamButton
           key={mem.organization.id}

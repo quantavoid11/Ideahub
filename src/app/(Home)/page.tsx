@@ -40,10 +40,7 @@ export default function Home() {
 
                       <p className="text-center text-[14px] text-gray-500 mt-4">Keep work and life separate by using your work email</p>
                   </div>
-
-
               </div>
-
               <div className="py-[110px] flex  items-center justify-center flex-col">
                   <h1 className="text-3xl text-center">Dont start from scratch —</h1>
                    <h1 className="text-3xl text-center">   dive right into Ideahub.</h1>

@@ -3,6 +3,7 @@
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 import Image from "next/image";
+import { useEffect } from "react";
 
 interface TeamButtonProps {
     id:string,
@@ -17,6 +18,7 @@ export default function TeamButton(props:TeamButtonProps){
     if (!setActive) return;
     setActive({ organization: props?.id });    
   };
+  
     return (
         <TooltipProvider>
             <Tooltip>

@@ -25,7 +25,7 @@ export default function AddButton(){
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
                         <div
-                            className="bg-white/25 mx-4 h-[40px] w-[40px] rounded-sm  mt-2 flex justify-center opacity-70 items-center hover:opacity-100">
+                            className="bg-white/25 mx-3 h-[35px] w-[35px] rounded-sm  mt-2 flex justify-center opacity-70 items-center hover:opacity-100">
                             <TooltipTrigger asChild>
                             <button className="text-white " onClick={()=>setOpen(true)}>
                                 <FontAwesomeIcon icon={faPlus} size={"lg"}/>

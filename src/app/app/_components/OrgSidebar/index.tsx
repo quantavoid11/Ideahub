@@ -11,10 +11,9 @@ import Option from "./Option";
 
 export default function OrgSideBar() {
     const { organization } = useOrganization();
-    console.log(organization);
-
+    
     return (
-        <div className="hidden lg:flex flex-col gap-y-3 w-[360px]   ">
+        <div className="hidden lg:flex flex-col gap-y-3 w-[206px]   ">
             <div className="mt-0">
                 <OrgHeader/>
                 <OnOrgOption/>

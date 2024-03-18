@@ -4,15 +4,15 @@ import Opened from "./Dropdowns/Opened";
 import Owned from "./Dropdowns/Owned";
 import { IoGridOutline } from "react-icons/io5";
 import { BsList } from "react-icons/bs";
-import BoardLsit from "./BoardList";
+import BoardList from "./BoardList";
 import { useOrganization } from "@clerk/nextjs";
 
 export default function DeashboardHeader() {
     const {organization}=useOrganization();
-    const teamId:string=organization?.id!;
-
+    const teamId=organization?.id;
+   
     return (
-        <div className="flex flex-col mt-[50px]">
+        <div className="flex flex-col mt-[50px] mb-[20px]">
             <div className="flex   justify-between mr-10">
                 <div className="lg:flex ">
                     <h1 className=" text-black text-3xl font-semibold">Boards in this team</h1>
@@ -33,7 +33,10 @@ export default function DeashboardHeader() {
                     </div>
                 </div>
             </div>
-            {teamId&&( <BoardLsit teamId={organization?.id!} query={{}}/> )}
+            <div className="mt-5">
+            {teamId&&( <BoardList teamId={organization?.id!} query={{}}/> )}
+            </div>
+           
         </div>
 
     )

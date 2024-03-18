@@ -31,7 +31,7 @@ export const createBoard = mutation({
             descriptionL: "",
             thumbnail: randomImage,
             owner: userIdendity.name!,
-            ownerId: userIdendity.issuer,
+            ownerId: userIdendity.subject,
             teamId: args.teamId,
         });
 

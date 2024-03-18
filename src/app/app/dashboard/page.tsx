@@ -9,14 +9,19 @@ import Content from "../_components/Content";
 export default function dashboardPage(){
     return (
         <div className="h-screen flex ">
-            <div className="flex ">
+            <div className="flex overflow-hidden">
                 <Sidebar/>
             </div>
             <div className="flex w-full">
-                <div className="flex w-full mt-6 ml-4">
-                <OrgSideBar/>
-                <Content/>
-                </div>
+               <div className="mt-6 ml-4">
+               <OrgSideBar/>
+               </div>
+               <div className="w-full overflow-y-auto ml-4 mt-6">
+               <Content />
+               </div>
+               
+                
+                
                 
             </div>
             

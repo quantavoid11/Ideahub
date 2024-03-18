@@ -11,20 +11,17 @@ interface BoardListProps{
     
 }
 
-export default function BoardLsit({teamId,query}:BoardListProps){
+export default function BoardList({teamId,query}:BoardListProps){
     const boards=useQuery(api.boards.getBoards,{
         teamId:teamId,
         ...query
     });
-
-    console.log(boards);
+    
     return (
-        <div className="flex gap-x-2 mt-4">
-            <BoardCard/>
-            <BoardCard/>
-            <BoardCard/>
-            <BoardCard/>
-            <BoardCard/>
+        <div className="flex gap-x-2 mt-4 flex-wrap">
+            {boards?.map((board)=>(
+                <BoardCard key={board._id}id={board._id} title={board.title}owner={board.owner}ownerId={board.ownerId}createdAt={board._creationTime}updatedAt={board._creationTime}teamId={board.teamId}thumbnail={board.thumbnail} starred={false}/>
+            ))}
         </div>
     )
 
