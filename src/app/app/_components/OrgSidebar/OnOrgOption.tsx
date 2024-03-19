@@ -19,7 +19,7 @@ export default function OnOrgOption(){
             </button>
         </div>
         <div className="flex  -ml-1">
-            <OrganizationSwitcher />
+            <OrganizationSwitcher  hidePersonal={true} />
         </div>
 
     </div>
