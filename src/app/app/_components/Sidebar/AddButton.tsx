@@ -10,7 +10,7 @@ import {
 import { ChangeEvent, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useOrganizationList } from "@clerk/nextjs";
+import { CreateOrganization, useOrganizationList } from "@clerk/nextjs";
 
 export default function AddButton() {
     const [open, setOpen] = useState(false);
@@ -34,7 +34,9 @@ export default function AddButton() {
             setInputError(true);
             return; 
         }
-        createOrganization({ name: organizationName });
+        
+       //createOrganization({name:organizationName});
+       
         setOrganizationName("");
         setOpen(false);
     };
@@ -53,6 +55,7 @@ export default function AddButton() {
                         </div>
                     </DialogTrigger>
                     <DialogContent>
+                        <form>
                         <div className="h-full w-3/4 m-10">
                             <h1 className="text-black font-semibold text-2xl">Create a new team</h1>
                             <div className="flex flex-col mt-6">
@@ -83,6 +86,8 @@ export default function AddButton() {
                                 </div>
                             </div>
                         </div>
+                        </form>
+                       
                     </DialogContent>
                 </Dialog>
                 <TooltipContent>
