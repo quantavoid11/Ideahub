@@ -1,6 +1,6 @@
 import Info from "./Info";
 import Toolbar from "./Toolbar";
-import User from "./Users";
+// import User from "./Users";
 
 interface CanvasProps{
   
@@ -13,7 +13,7 @@ export default function Canvas({boardId}:CanvasProps){
         <main className="w-full h-full realtive bg-neutral-200  touch-none">
             
             <Info/>
-           <User/>
+           {/* <User/> */}
             <Toolbar/>
             
 
