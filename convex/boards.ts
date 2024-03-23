@@ -9,7 +9,7 @@ export const getBoards = query({
     },
     handler: async (ctx, args) => {
         const userIdendity = await ctx.auth.getUserIdentity();
-        console.log(userIdendity)
+        
         if (!userIdendity) {
             throw new Error("User Unauthorized");
         }

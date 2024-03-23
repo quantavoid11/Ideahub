@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 const images = [
@@ -38,4 +38,16 @@ export const createBoard = mutation({
         return board;
     },
 
+})
+
+export const getBoard = query({
+    args: {
+       boardId: v.id("boards"),
+    },
+    handler: async (ctx, args) => {
+        const userIdendity = await ctx.auth.getUserIdentity();
+        const board = await ctx.db.get(args.boardId)
+            
+        return board;
+    },
 })

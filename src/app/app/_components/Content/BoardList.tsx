@@ -18,7 +18,7 @@ export default function BoardList({teamId,query}:BoardListProps){
     });
     
     return (
-        <div className="flex gap-x-2 mt-4 flex-wrap">
+        <div className="flex gap-x-2 mt-4 flex-wrap gap-y-1">
             {boards?.map((board)=>(
                 <BoardCard key={board._id}id={board._id} title={board.title}owner={board.owner}ownerId={board.ownerId}createdAt={board._creationTime}updatedAt={board._creationTime}teamId={board.teamId}thumbnail={board.thumbnail} starred={false}/>
             ))}

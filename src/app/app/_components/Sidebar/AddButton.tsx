@@ -35,7 +35,9 @@ export default function AddButton() {
             return; 
         }
         
-       //createOrganization({name:organizationName});
+        if (createOrganization) {
+            createOrganization({name:organizationName});
+        }
        
         setOrganizationName("");
         setOpen(false);
